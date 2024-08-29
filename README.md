@@ -27,23 +27,28 @@ The data preparation process involved preliminary data cleaning to ensure the da
 
 ## Visualizations
 ### Class imbalance
-![image]()
+![image](https://github.com/alexminingwa/Phase3_project/blob/main/images/Class_inbalance.png)
+
 The countplot visualizes the distribution of the target variable "Churn" in the SyriaTel Customer Churn dataset. The plot shows the number of customers who churned (denoted by 'True') and those who did not churn (denoted by 'False'). From the graph, it's evident that the dataset contains more instances of customers who did not churn compared to those who churned. This indicates an imbalance in the dataset
 
 ### Distribution of numerical features
-![image]()
+![image](https://github.com/alexminingwa/Phase3_project/blob/main/images/distribution%20of%20numerical%20features.png)
+
 Each histogram provides insights into the distribution of a particular numerical feature, showing the frequency of values along the x-axis and the corresponding frequency density along the y-axis. This visualization helps in understanding the range, central tendency, and spread of each numerical feature in the dataset.
 
 ### Analyzing the relationship between numerical features and the target variable
-![image]()
+![image](https://github.com/alexminingwa/Phase3_project/blob/main/images/numerical%20features%20and%20target%20variable.png)
+
 The plot visualizes the relationship between numerical features and the target variable 'churn' using boxplots. Each subplot represents a different numerical feature, and the boxplot illustrates the distribution of that feature's values across the two categories of the target variable: churn and non-churn. The x-axis denotes the target variable (churn), and the y-axis represents the values of the numerical feature. The boxplot shows the distribution of the feature's values within each category of the target variable, including the median (line inside the box), interquartile range (box), and outliers (points beyond the whiskers). By comparing the boxplots across different numerical features, we can identify potential relationships or differences in the distributions of these features between churn and non-churn groups, which can provide insights into the predictive power of these features for determining churn.
 
 ### Pairplot
-![image]()
+![image](https://github.com/alexminingwa/Phase3_project/blob/main/images/Pairplot.png)
+
 The pairplot provides a visual overview of the relationships between different numerical features in the dataset. It shows scatter plots for each pair of variables, allowing us to observe potential correlations or patterns. Diagonal elements typically display the distribution of each feature using histograms or kernel density estimates.
 
 ### Distribution of Categorical features
-![image]()
+![image](https://github.com/alexminingwa/Phase3_project/blob/main/images/categorical%20features.png)
+
 The aforementioned illustrates how categorical attributes, such as state, international plan, and voice mail plan, differ throughout the evaluation variable.
 
 ## Modelling
@@ -59,15 +64,17 @@ GridSearchCV was employed to find the optimal hyperparameters for the Random For
 ## Evaluation
 The evaluation of the model's performance included various metrics such as Accuracy, Precision, Recall, and F1-Score. These metrics provide insights into different aspects of the model's predictive capabilities. To compare the three models, Logistic Regression, Decision Tree, and Random Forest, we first evaluated their performance metrics on the test set. Logistic Regression achieved an accuracy of 85.5%, demonstrating good precision (87%) for the "False" class but lower recall (19%) and F1-score (28%) for the "True" class. Decision Tree outperformed with an accuracy of 94.3%, showing balanced precision (95%) and recall (98%) for the "False" class and acceptable precision (88%) but lower recall (72%) for the "True" class. Random Forest attained an accuracy of 89.8%, with a strong precision (89%) and perfect recall (100%) for the "False" class, but lower recall (34%) and F1-score (50%) for the "True" class. The confusion matrices also highlight the model performances We improved the random forest model using hyper parameter tuning where it showed a significant increase in its accuracy to predict customer churn. We got an accuracy of 94.3% and a best score of 95.4% which improved our model’s ability to predict the probability of a customer to stop using a company’s product due to various reasons.
 
-![image]()
+![image](https://github.com/alexminingwa/Phase3_project/blob/main/images/Confusion%20matrix.png)
+
 The confusion matrix shows that our model has high accuracy (94.01%) and precision (98.41%), indicating that it is effective in predicting non-churn customers and is usually correct when it predicts churn. However, the recall (61.39%) is relatively low, meaning that the model misses a significant number of actual churners. The F1-Score, which balances precision and recall, is 75.56%. To improve the model's performance, especially in identifying more actual churners, further tuning of the model parameters or adjusting the decision threshold might be necessary.
 
-![image]()
+![image](https://github.com/alexminingwa/Phase3_project/blob/main/images/Feature%20Importance.png)
+
 * The bar graph represents the feature importances from the tuned Random Forest model used for predicting customer churn. Each bar corresponds to a different feature from the dataset, with the height indicating the importance of that feature in making predictions.
 * Certain features such as 'total day charge', 'number of voice mail messages', 'total eve charge', 'international plan' and 'state' show higher importance, implying that they have a stronger influence on the model's predictions.
 * This insight helps in understanding which factors are most critical in predicting customer churn, thereby guiding strategic decisions to mitigate churn.
 
-![image]()
+![image](https://github.com/alexminingwa/Phase3_project/blob/main/images/ROC%20curve.png)
 The ROC curve illustrates the model's performance across various threshold levels, with the true positive rate (sensitivity) plotted against the false positive rate (1-specificity). The Area Under the Curve (AUC) is 0.93, indicating a high level of predictive accuracy. An AUC of 0.93 suggests that the model is very effective at distinguishing between customers who churn and those who do not, as a value of 1 represents a perfect model and 0.5 represents a model with no discrimination ability.
 
 ## Recommendations
